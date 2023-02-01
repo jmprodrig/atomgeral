@@ -1,0 +1,478 @@
+/*
+ * This file is part of the Access to Memory (AtoM) software.
+ *
+ * Access to Memory (AtoM) is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Access to Memory (AtoM) is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Access to Memory (AtoM).  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * @ 2022.12.03
+ * Authors: Ricardo Pinho (ricardo.pinho@gisvm.com)
+ *
+ */
+
+/*
+ * Start main.less
+ *
+ */
+
+@font-face {
+  font-family: 'Barlow Regular';
+  src: url('../../vendor/fonts/barlow/Barlow-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Barlow Semibold';
+  src: url('../../vendor/fonts/barlow/Barlow-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+ * Start variables.less
+ *
+ */
+
+// Scaffolding
+// -------------------------
+@bodyBackground: @graySilver;
+@textColor: @black;
+
+@breadcrumbsSeparatorColor: @grayLight;
+
+@topBarBackgroundColor: rgb(204, 37, 50);
+
+@orange: @topBarBackgroundColor; //#f6ac00; // #ff8800;
+
+@blue: @green; //@buttonclipboardaddedcolor
+
+@searchfilterColor: @topBarBackgroundColor;
+
+@referencecodeColor: @textColor;
+
+@dropdownselectedColor: @topBarBackgroundColor;
+
+@tabletheadthColor: @white;
+@tabletheadthBColor: @topBarBackgroundColor;
+
+@objectBackgroundColor: @white;
+
+@buttonclipboardaddedcolor: @green; //@blue;
+
+//@wrapperbackground: @white;
+//@wrapperborderpx: 20px;
+
+// Forms
+// -------------------------
+@requiredfieldColor: @topBarBackgroundColor;
+
+
+// Links
+// -------------------------
+//@linkColor:             #08c;
+@linkColor: @topBarBackgroundColor;
+@linkColorHover: darken(@linkColor, 15%);
+
+
+// Typography
+// -------------------------
+
+@sansFontFamily: "Barlow Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily: Georgia, "Times New Roman", Times, serif;
+@monoFontFamily: Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@sansBoldFontFamily: "Barlow Semibold", "Open Sans Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*
+ * Start scaffolding.less
+ */
+
+// div id="wrapper"
+
+#wrapper {
+  background-image: none; //url('../../images/separator.png');
+  width: 90%!important;
+  //background-color: @wrapperbackground;
+  //border-left-width: @wrapperborderpx;
+  //border-right-width: @wrapperborderpx;
+  //border-style: solid;
+  //border-color: transparent;
+  //background-repeat: no-repeat;
+  //background-position: top center;
+}
+
+
+// Multiline headings
+
+.multiline-header img {
+  width: 0px;
+}
+
+// Table
+
+.table thead th {
+  background-color: @tabletheadthBColor;
+  color: @tabletheadthColor;
+}
+
+// Form
+.search-filter {
+  color: @searchfilterColor;
+}
+
+// Sort header
+
+#sort-header {
+
+  // This is the item selected and shown, e.g. "Sort by: [Most recent]"
+  .dropdown-selected {
+    color: @dropdownselectedColor;
+  }
+}
+
+
+
+// Search result
+
+.search-result {
+
+  // First result with digital objects
+
+  &.media-summary {
+    color: @orange;
+  }
+
+  // List of details
+
+  .result-details {
+    li {
+      &.reference-code {
+        color: @referencecodeColor;
+      }
+
+      .publication-status {
+        color: @orange;
+      }
+    }
+  }
+}
+
+// Facets
+
+.facet {
+
+  // Open state of a facet
+  &.open {
+    .facet-header a {
+      background-color: @topBarBackgroundColor;
+    }
+  }
+}
+
+// Breadcrumbs
+
+.breadcrumb {
+  li:after {
+    color: @breadcrumbsSeparatorColor;
+  }
+}
+
+// Content
+
+#content {
+
+  // Section title
+  >h2,
+  >div>h2,
+  .section>h2,
+  .section>a>h2,
+  .section>span>h2,
+  section>h2,
+  section>a>h2,
+  section>span>h2 {
+    color: @textColor;
+  }
+}
+
+/*
+ * Start treeview.less
+ */
+
+/* Treeview header */
+
+#treeview-header p {
+  background-color: @topBarBackgroundColor;
+}
+
+/*
+ * Start forms.less
+ *
+ */
+
+// Required field (asterisk)
+
+.form-required {
+  color: @requiredfieldColor;
+}
+
+/*
+ * Start buttons.less
+ *
+ */
+
+/*
+  * Clipboard
+  */
+
+button.clipboard,
+button.clipboard-wide {
+  //border-radius: 5px;
+  //outline: none;
+  //color: @grayLight;
+
+  &:before {
+    //font-family: 'FontAwesome';
+    //font-size: 20px;
+    //color: @grayLight;
+    content: url(../../images/icons/icon-clipboard-add.png); //"\f0c6";
+    top: 0px;
+  }
+}
+
+/*
+ * Start header.less
+ *
+ */
+
+
+//@topBarBackgroundColor: rgb(204, 37, 50);
+
+#logo-bar {
+  background-color: @topBarBackgroundColor;
+  background-image: url(../../images/arquiva-header-onda-semcorte.png);
+  background-repeat: no-repeat;
+  //min-height: 100px;
+}
+
+header #logo {
+  display: block;
+  float: left;
+  margin: 20px 20px 20px 8px;
+}
+
+header #republica_drcn {
+  display: block;
+  float: right;
+  margin: 20px 20px 20px 8px;
+}
+
+// Menu customizations
+
+#menu-bar {
+  background-color: @objectBackgroundColor;
+  border-bottom: 1pt solid rgb(0, 0, 0);
+}
+
+#search-bar #browse-menu {
+  padding-bottom: 10px;
+  padding-right: 20px;
+}
+
+#browse-menu {
+  float: none;
+  margin-bottom: 12px;
+
+  >button {
+    .border-radius(0px);
+    background-color: @objectBackgroundColor;
+    border: 1pt solid rgb(0, 0, 0);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    float: left;
+  }
+}
+
+// Icons
+
+#quick-links-menu,
+#language-menu,
+#admin-menu,
+#import-menu,
+#manage-menu,
+#add-menu,
+#clipboard-menu {
+
+  // Icons
+  >button:before {
+    color: @black;
+  }
+}
+
+#language-menu {
+  >button:before {
+    content: url(../../images/icons/icon-language.png);
+    top: 8px;
+  }
+}
+
+#clipboard-menu {
+  >button:before {
+    content: url(../../images/icons/icon-clipboard.png);
+    top: 8px;
+  }
+}
+
+#quick-links-menu {
+  >button:before {
+    content: url(../../images/icons/icon-menu.png);
+    top: 4px;
+  }
+}
+
+#user-menu:hover {
+  background-color: @topBarBackgroundColor;
+}
+
+#user-menu {
+  >button:before {
+    content: url(../../images/icons/icon-user.png);
+    top: 0px;
+  }
+
+  button {
+    margin-left: 4px;
+    margin-right: 4px;
+    background-color: transparent;
+  }
+}
+
+
+.top-dropdown-container .top-dropdown-header {
+  img {
+    width: 0px;
+  }
+}
+
+// Top search bar
+
+#search-bar #search-form-wrapper {
+
+  // Use form to margin top
+  // And cancel default margin bottom
+  form {
+    position: relative; // Positionate search autocomplete
+    margin: 12px 0 0 0;
+    width: 300px;
+  }
+
+  input {
+
+    // Reset border
+    border: 1pt solid rgb(0, 0, 0);
+
+    // See .top-item
+    background-color: @white;
+    border-radius: 0;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    color: @black;
+
+    // Define height (box-model is content-box here)
+    padding: 5px;
+    height: auto;
+
+  }
+
+  button {
+    background-color: white;
+    border: 0px solid;
+    margin: 4px 4px 4px 4px;
+    color: @black;
+  }
+
+}
+
+
+/*
+ * End header.less
+ *
+ */
+
+#footer {
+  background-color: @topBarBackgroundColor;
+  //background-image: url(../../images/arquiva-header-onda-semcorte.png);
+  //background-repeat: no-repeat;
+}
+
+#DireitosDRCN {
+  display: block;
+  float: left;
+  margin: 20px 8px 20px 8px;
+  color: white;
+}
+
+#Logos-financiamento {
+  display: block;
+  float: right;
+  margin: 20px 8px 20px 8px;
+  text-align: right;
+}
+
+.home{
+#sidebar {
+  display: none;
+}
+.span9 {
+  width: 100%;
+}
+}
+
+
+#main-column{
+  h1{display: none;}
+}
+
+.container{
+  h1{display: none;}
+}
+
+#site-slogan {
+  display: none;
+}
+
+#content{
+  .card{
+    .imglinksub1{
+      display: inline!important;
+    }
+    .imglinksub2{
+      display: none!important;
+    }
+  }
+  
+  .card:hover {
+  background-color: #CC2532!important;
+
+    .imglinksub1{
+      display: none!important;
+    }
+    .imglinksub2{
+      display: inline!important;
+    }
+  }
+
+}
